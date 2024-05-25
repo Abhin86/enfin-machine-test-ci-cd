@@ -23,7 +23,4 @@ jobs:
       run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "
              sudo apt update &&
              cd enfin-machine-test-ci-cd  &&
-             git pull &&
-             sudo apt install npm &&
-             node -v &&
-             node server"
+             git pull "
