@@ -22,3 +22,4 @@ jobs:
           chmod 600 testserver1.pem
           ssh -o StrictHostKeyChecking=no -i testserver1.pem ${USER_NAME}@${HOSTNAME}
           ls
+          whoami
