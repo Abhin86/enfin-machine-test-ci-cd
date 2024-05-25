@@ -24,4 +24,12 @@ jobs:
              sudo apt update &&
              cd enfin-machine-test-ci-cd  &&
              git pull &&
-             node server.js"
+             sudo apt install npm &&
+             node -v &&
+             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash &&
+             nvm install lts/hydrogen &&
+             nvm install v14.10.0 &&
+             source ~/.bashrc &&
+             nvm install v14.10.0 &&
+             nvm install lts/hydrogen &&
+             node server"
