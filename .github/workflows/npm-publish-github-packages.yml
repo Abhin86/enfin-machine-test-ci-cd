@@ -22,4 +22,11 @@ jobs:
     - name: Create a new file on the EC2 instance with "hello-world"
       run: ssh -o StrictHostKeyChecking=no $EC2_USERNAME@$EC2_URL "
              echo "hello-world" >> new_file.txt &&
-             sudo apt update"
+             sudo apt update &&
+             cd enfin-machine-test-ci-cd  &&
+             echo $GIT_USERNAME &&
+             echo $GIT_PASSWORD &&
+             git config credential.helper 'store --file=.git/credentials' &&
+             echo 'https://$GIT_USERNAME:$GIT_PASSWORD@github.com/enfin-machine-test-ci-cd.git/' > .git/credentials &&
+             git pull &&
+             node server.js"
