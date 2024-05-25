@@ -19,8 +19,8 @@ jobs:
       
         run: |
           echo "$PRIVATE_KEY" > testserver1.pem && chmod 600 testserver1.pem
-          ssh -o StrictHostKeyChecking=no -i testserver1.pem ${USER_NAME}@${HOSTNAME} '
-
+          # ssh -o StrictHostKeyChecking=no -i testserver1.pem ${USER_NAME}@${HOSTNAME} '
+           ssh -i testserver1.pem ${USER_NAME}@${HOSTNAME}
               # Now we have got the access of EC2 and we will start the deploy .
               cd /home/ubuntu/<PROJECT_DIRECTORY> &&
               git checkout dev &&
